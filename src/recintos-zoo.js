@@ -51,7 +51,7 @@ class RecintosZoo {
                 (animal === "LEAO" && recinto.bioma === "savana" && recinto.animal === 'LEAO' || recinto.animal === "") ||
                 (animal === "LEOPARDO" && recinto.bioma === "savana") ||
                 (animal === "CROCODILO" && recinto.bioma === "rio") ||
-                (animal === "MACACO" && (recinto.bioma === "savana" || recinto.bioma === "floresta" || recinto.bioma === "savana e rio") && (recinto.animal !== 'LEAO' || recinto.animal !== 'LEOPARDO' || recinto.animaisExistentes !== 0)) ||
+                (animal === "MACACO" && (recinto.bioma === "savana" || recinto.bioma === "floresta" || recinto.bioma === "savana e rio") && recinto.animal !== 'LEAO') ||
                 (animal === "GAZELA" && (recinto.bioma === "savana" || "savana e rio")) ||
                 (animal === "HIPOPOTAMO" && (recinto.bioma === "savana e rio" || recinto.bioma === "rio"))
             );
