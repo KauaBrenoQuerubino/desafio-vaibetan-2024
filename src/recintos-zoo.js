@@ -80,4 +80,4 @@ class RecintosZoo {
 
 export { RecintosZoo as RecintosZoo };
 
-new RecintosZoo().analisaRecintos('HIPOPOTAMO', 1);
+
