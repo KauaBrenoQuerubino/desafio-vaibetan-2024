@@ -1,3 +1,4 @@
+
 class RecintosZoo {
 
     analisaRecintos(animal, quantidade) {
@@ -48,24 +49,23 @@ class RecintosZoo {
             let espacoLivre = recinto.tamanhoTotal - recinto.animaisExistentes;
             
             const biomaAdequado = (
-                (animal === "LEAO" && recinto.bioma === "savana" && recinto.animal === 'LEAO' || recinto.animal === "") ||
-                (animal === "LEOPARDO" && recinto.bioma === "savana") ||
-                (animal === "CROCODILO" && recinto.bioma === "rio") ||
-                (animal === "MACACO" && (recinto.bioma === "savana" || recinto.bioma === "floresta" || recinto.bioma === "savana e rio") && (recinto.animal !== 'LEAO' || recinto.animal !== 'LEOPARDO' || recinto.animaisExistentes !== 0)) ||
-                (animal === "GAZELA" && (recinto.bioma === "savana" || "savana e rio")) ||
+                (animal === "LEAO" && recinto.bioma === "savana" && (recinto.animal === 'LEAO' || recinto.animaisExistentes === 0) ) ||
+                (animal === "LEOPARDO" && recinto.bioma === "savana" && (recinto.animal === 'LEOPARDO' || recinto.animaisExistentes === 0)) ||
+                (animal === "CROCODILO" && recinto.bioma === "rio" && (recinto.animal === 'CROCODILO' || recinto.animaisExistentes === 0)) ||
+                (animal === "MACACO" && (recinto.bioma === "savana" || recinto.bioma === "floresta" || recinto.bioma === "savana e rio") && recinto.animal !== 'LEAO') ||
+                (animal === "GAZELA" && (recinto.bioma === "savana" || recinto.bioma === "savana e rio")) || 
                 (animal === "HIPOPOTAMO" && (recinto.bioma === "savana e rio" || recinto.bioma === "rio"))
             );
+            
 
             if (biomaAdequado && espacoLivre >= quantidade) {
                     espacoLivre -= (quantidade * TamanhoAnimal[animal])
                     if(espacoLivre > 0){
                         recintosViaveis.push(`Recinto ${recinto.numero} (espaço livre: ${espacoLivre} total: ${recinto.tamanhoTotal})`);
                         return recintosViaveis
-                    }else{
-                       
+                    }else{ 
                         return { erro: 'Não há recinto viável'}
-                    }
-                    
+                    } 
                 }
         });
 
@@ -73,11 +73,8 @@ class RecintosZoo {
             return { erro: "Não há recinto viável" };
         }
         return { recintosViaveis };
-        
         }
     }
 
 
 export { RecintosZoo as RecintosZoo };
-
-new RecintosZoo().analisaRecintos('HIPOPOTAMO', 1);

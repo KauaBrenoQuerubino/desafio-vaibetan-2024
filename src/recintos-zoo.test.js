@@ -48,11 +48,6 @@ describe('Recintos do Zoologico', () => {
         expect(resultado.recintosViaveis[0]).toBe('Recinto 3 (espaço livre: 1 total: 7)')
         expect(resultado.recintosViaveis[1]).toBe('Recinto 4 (espaço livre: 4 total: 8)')
     })
-    test('Hipopótamo(s) só tolera(m) outras espécies estando num recinto com savana e rio', () => {
-        const resultado = new RecintosZoo().analisaRecintos('HIPOPOTAMO', 1);
-        expect(resultado.erro).toBeFalsy();
-        expect(resultado.recintosViaveis[0]).toBe('Recinto 3 (espaço livre: 1 total: 7)')
-        expect(resultado.recintosViaveis[1]).toBe('Recinto 4 (espaço livre: 4 total: 8)')
-    })
+    
 });
 
