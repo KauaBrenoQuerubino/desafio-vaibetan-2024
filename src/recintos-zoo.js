@@ -73,7 +73,10 @@ class RecintosZoo {
             return { erro: "Não há recinto viável" };
         }
         return { recintosViaveis };
+<<<<<<< HEAD
 
+=======
+>>>>>>> b3a74b1a6213e3b727d82785289b04bb141d0e5f
         }
     }
 
