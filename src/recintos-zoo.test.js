@@ -36,6 +36,12 @@ describe('Recintos do Zoologico', () => {
         expect(resultado.recintosViaveis[2]).toBe('Recinto 3 (espaço livre: 3 total: 7)');
         expect(resultado.recintosViaveis.length).toBe(3);
     });
+
+    test('Animais carnívoros devem habitar somente com a própria espécie', () => {
+        const resultado = new RecintosZoo().analisaRecintos('LEAO', 1);
+        expect(resultado.erro).toBeFalsy();
+        expect(resultado.recintosViaveis[0]).toBe('Recinto 5 (espaço livre: 3 total: 9)')
+    })
     test('Hipopótamo(s) só tolera(m) outras espécies estando num recinto com savana e rio', () => {
         const resultado = new RecintosZoo().analisaRecintos('HIPOPOTAMO', 1);
         expect(resultado.erro).toBeFalsy();
